@@ -1,5 +1,5 @@
 <div class="jumbotron">
-  <h2><%= @restaurants.count %> Restaurant Listings:</h2>
+  <h2>Recently Added Restaurants:</h2>
 
   <ul>
     <% @restaurants.each do |restaurant| %>
@@ -9,9 +9,12 @@
       </li>
 
     <% end %>
+
+
+
   </ul>
 
-  <%= link_to 'Back to recently added', root_path %>
+  <%= link_to 'See all restaurants', restaurants_path %>
 
   <% if @restaurants.empty? == true %>
     <p>There are no restaurants posted yet. Add one!</p>

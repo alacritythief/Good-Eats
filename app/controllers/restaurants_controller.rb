@@ -13,7 +13,7 @@ class RestaurantsController < ApplicationController
   end
 
   def index
-    @restaurants = Restaurant.all.order(name: :desc)
+    @restaurants = Restaurant.all.order(name: :asc)
   end
 
   def show

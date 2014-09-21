@@ -1,47 +1,6 @@
 <h3>Create New Restaurant Listing</h3>
 <p>Use the form below to create a new restaurant listing:</p>
 
-<%= form_for :restaurant, url: restaurants_path do |f| %>
-
-  <p>
-    <%= f.label :name %>
-    <%= f.text_field :name, placeholder: "Bob's Burgers" %>
-  </p>
-
-  <p>
-    <%= f.label :address %>
-    <%= f.text_field :address, placeholder: "123 Example Way" %>
-  </p>
-
-  <p>
-    <%= f.label :city %>
-    <%= f.text_field :city, placeholder: "Boston" %>
-  </p>
-
-  <p>
-    <%= f.label :state %>
-    <%= f.text_field :state, placeholder: "MA" %>
-  </p>
-
-  <p>
-    <%= f.label :zip %>
-    <%= f.text_field :zip, placeholder: "02201" %>
-  </p>
-
-  <p>
-    <%= f.label :description %>
-    <%= f.text_area :description, placeholder: "(OPTIONAL) This is a really great place with awesome burgers." %>
-  </p>
-
-  <p>
-    <%= f.label :category %>
-    <%= f.text_field :category, placeholder: "e.g. American, Thai, Italian, Chinese, Fusion" %>
-  </p>
-
-  <p>
-    <%= f.submit "Create" %>
-  </p>
-
-<% end %>
+<%= render 'form' %>
 
 <%= link_to 'Back', restaurants_path %>
