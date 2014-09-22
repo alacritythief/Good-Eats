@@ -2,7 +2,7 @@
 
   <% if @restaurant != nil && @restaurant.errors.any? %>
     <div id="error_explanation" class="alert alert-danger">
-      <h3>Sorry, we couldn't create your restaurant listing. There were <%= pluralize(@restaurant.errors.count, "reason") %> why:</h3>
+      <h3>Sorry, we couldn't create your restaurant listing. There was <%= pluralize(@restaurant.errors.count, "reason") %> why:</h3>
       <ul>
       <% @restaurant.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
