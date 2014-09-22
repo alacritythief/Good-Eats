@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :restaurants
+  resources :restaurants do
+    resources :reviews
+  end
+
+  # , only: [:index, :show, :new, :create]
 
   root 'recent#index'
 

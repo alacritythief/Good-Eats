@@ -38,4 +38,18 @@
   </p>
 </div>
 
-<%= link_to 'Back to Restaurant Listings', restaurants_path %>
+<h2><%= pluralize(@restaurant.reviews.count, "review") %> for this restaurant:</h2>
+
+<hr>
+
+<% if @restaurant.reviews.empty? == true %>
+  <p>There are no reviews yet. Write one!</p>
+  <hr>
+<% else %>
+  <%= render @restaurant.reviews %>
+<% end %>
+
+<p><%= link_to 'Write A Review', new_restaurant_review_path(@restaurant), class: 'btn btn-primary' %></p>
+
+
+<p><%= link_to 'Back to Restaurant Listings', restaurants_path %></p>

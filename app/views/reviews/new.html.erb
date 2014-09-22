@@ -1,0 +1,27 @@
+<h3>Create a review for "<%= @restaurant.name %>":</h3>
+
+<% if @restaurant.errors.any?  %>
+  <div id="error_explanation" class="alert alert-danger">
+    <h3>Sorry, we coudn't create your review. There were <%= pluralize(@review.errors.count, "reason") %> why:</h3>
+    <ul>
+    <% @review.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for([@restaurant, @restaurant.reviews.build]) do |f| %>
+  <p>
+    <%= f.label :rating %>
+    <%= f.select(:rating, [5, 4, 3, 2, 1], {include_blank: 'Select a rating'}, {class: 'form-control'}) %>
+  </p>
+
+  <p>
+    <%= f.label :body %>
+    <%= f.text_area :body, placeholder: 'This is my amazing review', class: 'form-control', rows: 10 %>
+  </p>
+  <p>
+    <%= f.submit 'Post Review', class: 'btn btn-primary'%>
+  </p>
+<% end %>
