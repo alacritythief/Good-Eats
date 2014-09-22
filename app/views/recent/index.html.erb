@@ -9,12 +9,13 @@
       </li>
 
     <% end %>
-
-
-
   </ul>
 
-  <%= link_to 'See all restaurants', restaurants_path %>
+  <% if @restaurants.empty? == false %>
+
+    <%= link_to 'See all restaurants', restaurants_path %>
+
+  <% end %>
 
   <% if @restaurants.empty? == true %>
     <p>There are no restaurants posted yet. Add one!</p>
