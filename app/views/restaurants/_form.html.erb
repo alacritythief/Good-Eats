@@ -1,0 +1,53 @@
+<%= form_for :restaurant, url: restaurants_path do |f| %>
+
+  <% if @restaurant != nil && @restaurant.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <h3>Sorry, we couldn't create your restaurant listing. There was <%= pluralize(@restaurant.errors.count, "reason") %> why:</h3>
+      <ul>
+      <% @restaurant.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name, placeholder: "Bob's Burgers", class: 'form-control' %>
+  </p>
+
+  <p>
+    <%= f.label :address %>
+    <%= f.text_field :address, placeholder: "123 Example Way", class: 'form-control' %>
+  </p>
+
+  <p>
+    <%= f.label :city %>
+    <%= f.text_field :city, placeholder: "Boston", class: 'form-control' %>
+  </p>
+
+  <p>
+    <%= f.label :state %>
+    <%= f.text_field :state, placeholder: "MA", class: 'form-control' %>
+  </p>
+
+  <p>
+    <%= f.label :zip %>
+    <%= f.text_field :zip, placeholder: "02201", class: 'form-control' %>
+  </p>
+
+  <p>
+    <%= f.label :description %>
+    <%= f.text_area :description, placeholder: "(OPTIONAL) This is a really great place with awesome burgers.", class: 'form-control', rows: 3 %>
+  </p>
+
+  <p>
+    <%= f.label :category %>
+    <%= f.text_field :category, placeholder: "(OPTIONAL) e.g. American, Thai, Italian, Chinese, Fusion", class: 'form-control' %>
+  </p>
+
+  <p>
+    <%= f.submit "Create", class: 'btn btn-primary' %>
+  </p>
+
+<% end %>

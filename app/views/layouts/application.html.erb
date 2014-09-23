@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>GoodEats</title>
+  <title>Restau-Rate</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<div class="container">
+
+  <div class="top-title">
+    <h1 id="title"><a href ="/"><span class="glyphicon glyphicon-glass"></span> <strong>Restau-Rate</strong></a></h1>
+    <h2 id="subtitle"><small>Find and rate your favorite restaurants</small></h2>
+  </div>
+
+  <%= yield %>
+
+</div>
 
 </body>
 </html>

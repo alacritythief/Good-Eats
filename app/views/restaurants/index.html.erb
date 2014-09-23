@@ -1,0 +1,21 @@
+<div class="jumbotron">
+  <h2><%= @restaurants.count %> Restaurant Listings:</h2>
+
+  <ul>
+    <% @restaurants.each do |restaurant| %>
+
+      <li>
+        <%= link_to restaurant.name, restaurant_path(restaurant) %>
+      </li>
+
+    <% end %>
+  </ul>
+
+  <%= link_to 'Back to recently added', root_path %>
+
+  <% if @restaurants.empty? == true %>
+    <p>There are no restaurants posted yet. Add one!</p>
+  <% end %>
+</div>
+
+<%= link_to 'Add a Restaurant', new_restaurant_path, class: 'btn btn-primary' %>
